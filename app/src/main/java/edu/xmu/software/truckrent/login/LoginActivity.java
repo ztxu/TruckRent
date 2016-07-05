@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText text_username; //输入的用户名控件
     private EditText text_password; //输入的密码控件
     private Button btn_login;       //登陆按钮
-    private Button btn_register;    //注册按钮
+    private Button btn_register;    //注册按钮 注册按钮
     private ImageView view_forget;  //忘记密码
 
     //define variable
