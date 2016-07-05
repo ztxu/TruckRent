@@ -7,7 +7,7 @@ import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.MapView;
 
 public class MainActivity extends AppCompatActivity {
-
+    //mapview
     MapView mapView=null;
 
     @Override
