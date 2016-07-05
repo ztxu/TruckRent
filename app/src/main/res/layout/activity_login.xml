@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.xmu.software.truckrent.login.LoginActivity"
+    android:background="@drawable/lg_bg_full">
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_marginTop="55dp"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/appname"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="&quot; 高校旅游，一起Hi &quot;"
+        android:id="@+id/title1"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/Logo"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/username_layout"
+        android:orientation="horizontal"
+        android:layout_width="250dp"
+        android:layout_height="47dp"
+        android:layout_below="@+id/title1"
+        android:layout_marginTop="53dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/stroke">
+
+        <ImageView
+            android:id="@+id/username_icon_view"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lg_login_icon"
+            android:layout_alignParentTop="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/username_layout"
+            android:id="@+id/username_text"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:background="@null"
+            android:textCursorDrawable="@null"
+            android:singleLine="true"
+            android:maxLength="16"
+            android:hint="用户名/电话"
+            android:textColorHint="#ADADAC"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/password_layout"
+        android:orientation="horizontal"
+        android:layout_width="250dp"
+        android:layout_height="47dp"
+        android:layout_below="@+id/username_layout"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/stroke"
+        >
+
+
+        <ImageView
+            android:id="@+id/password_icon_view"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lg_passwd_icon"
+            android:layout_alignParentTop="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/username_layout"
+            android:id="@+id/password_text"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:background="@null"
+            android:layout_weight="1"
+            android:textCursorDrawable="@null"
+            android:inputType="textPassword"
+            android:ems="20"
+            android:singleLine="true"
+            android:maxLength="16"
+            android:hint="密码"
+            android:textColorHint="#ADADAC"
+            />
+
+        <ImageView
+            android:id="@+id/forget_icon_view"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lg_forget_icon"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="47dp"
+        android:text="登   录"
+        android:textColor="#FFFFFF"
+        android:id="@+id/login_button"
+        android:layout_below="@+id/password_layout"
+        android:layout_alignLeft="@+id/password_layout"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/lg_login_btn"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="47dp"
+        android:text="注   册"
+        android:textColor="#FFFFFF"
+        android:id="@+id/register_button"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/lg_register_btn"
+        android:textSize="20dp"
+        android:layout_below="@+id/login_button"
+        android:layout_alignLeft="@+id/login_button"/>
+
+</RelativeLayout>
