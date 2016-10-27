@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import edu.xmu.software.truckrent.MapActivity;
 import edu.xmu.software.truckrent.MenuActivity;
 import edu.xmu.software.truckrent.R;
 
@@ -151,7 +152,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             editor.commit();
             //告知线程handler，等待动画dialog隐藏掉
             handler.sendEmptyMessage(100);
-            Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MapActivity.class);
             startActivity(intent);
             finish();
         } else {

@@ -10,25 +10,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.xmu.software.truckrent.login.LoginActivity"
     android:background="@drawable/lg_bg_full">
-    <ImageView
-        android:id="@+id/Logo"
-        android:layout_marginTop="55dp"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:background="@drawable/appname"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="&quot; 高校旅游，一起Hi &quot;"
+        android:text="&quot; 伯乐出行 &quot;"
         android:id="@+id/title1"
         android:layout_marginTop="20dp"
         android:textSize="18dp"
         android:textColor="@android:color/background_light"
-        android:layout_below="@+id/Logo"
         android:layout_centerHorizontal="true" />
 
     <LinearLayout
