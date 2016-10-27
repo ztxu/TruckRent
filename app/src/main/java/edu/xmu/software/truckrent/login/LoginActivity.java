@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import edu.xmu.software.truckrent.recognition.ActivityOffline;
 import edu.xmu.software.truckrent.recognition.HiActivity;
 import edu.xmu.software.truckrent.MapActivity;
 import edu.xmu.software.truckrent.R;
@@ -104,7 +105,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()){
             case R.id.forget_icon_view:
 
-                Intent intent1 = new Intent(LoginActivity.this,HiActivity.class);
+                Intent intent1 = new Intent(LoginActivity.this,ActivityOffline.class);
                 startActivity(intent1);
                 break;
             case R.id.register_button:

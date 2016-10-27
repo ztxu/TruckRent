@@ -24,7 +24,6 @@ public class HiActivity extends AppCompatActivity implements View.OnClickListene
     private Intent intent = null;
     private Button btn_start_service;
     private Button btn_stop_service;
-    private EditText et_data;
     private TextView tv_out;
     MyServiceConn myServiceConn;
     MyService.MyBinder binder = null;
@@ -44,7 +43,6 @@ public class HiActivity extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()) {
             case R.id.btn_start_service:
                 //用intent启动Service并传值
-                intent.putExtra("data", et_data.getText().toString());
                 Log.d(TAG, "--onCreate()-- startService(intent);");
 
                 startService(intent);
@@ -106,7 +104,6 @@ public class HiActivity extends AppCompatActivity implements View.OnClickListene
         btn_start_service = (Button) findViewById(R.id.btn_start_service);
         btn_stop_service = (Button) findViewById(R.id.btn_stop_service);
 
-        et_data = (EditText) findViewById(R.id.et_data);
         tv_out = (TextView) findViewById(R.id.tv_out);
     }
 
