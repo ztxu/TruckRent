@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -15,8 +16,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import edu.xmu.software.truckrent.HiActivity;
 import edu.xmu.software.truckrent.MapActivity;
 import edu.xmu.software.truckrent.MenuActivity;
+import edu.xmu.software.truckrent.MyService;
 import edu.xmu.software.truckrent.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -60,6 +63,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+       /* try{
+            intent = new Intent(this, MyService.class);
+            startService(intent);
+        }catch (Exception e){
+
+            new AlertDialog.Builder(this).setTitle("标题").setMessage(e.toString())
+                    .setPositiveButton("确定", null).show();
+        }*/
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
         /** 用于获取clickString，定位是哪个地方触发了登陆事件
@@ -94,11 +106,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.forget_icon_view:
-//                //进入到忘记密码页面
-//                Intent intent1 = new Intent(LoginActivity.this,
-//                        ForgetActivity.class);
-//                //调用activity进入新页面并返回结果
-//                startActivityForResult(intent1, 1);
+
+                Intent intent1 = new Intent(LoginActivity.this,HiActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.register_button:
                 Intent intent2 = new Intent(LoginActivity.this,RegisterActivity.class);

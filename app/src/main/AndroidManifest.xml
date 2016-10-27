@@ -28,6 +28,9 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <supports-screens
         android:anyDensity="true"
@@ -43,6 +46,55 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- begin: baidu speech sdk -->
+        <!--
+            离线功能指南：
+            1. 在百度语音开放平台注册应用，http://yuyin.baidu.com/app
+            2. 为您的应用的“申请离线授权页面”，填写程序包名
+            3. 在当前应用的AndroidManifest.xml中填写相应的APP_ID（或在代码中设置appid参数）
+            4. 根据场景下载并集成相应的资源，见http://yuyin.baidu.com/docs/asr/131和http://yuyin.baidu.com/asr/download
+
+            另外需要注意的是离线功能只是在线功能的“增强”，不能永久不联网使用（特别是首次使用）。
+        -->
+        <!--
+    请填写真实的APP_ID API_KEY SECRET_KEY
+         App ID: 8747484
+
+    API Key: iWqpLE9kWQ3xfT1UmWFdSXxM
+
+    Secret Key: 4c951ce74b8c8d4e43db4692a4bfabfe
+        -->
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
+            android:value="8747484" />
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="iWqpLE9kWQ3xfT1UmWFdSXxM" />
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="4c951ce74b8c8d4e43db4692a4bfabfe" />
+
+        <service
+            android:name="com.baidu.speech.VoiceRecognitionService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name="com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="com.baidu.action.RECOGNIZE_SPEECH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- end : baidu speech sdk -->
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="SqyS2YGbcN3xXzlcRSlfRtDyBQO4MA8G" />
@@ -73,11 +125,14 @@
             -->
         </activity>
         <activity android:name=".login.RegisterActivity">
-         <!--   <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity android:name=".login.LoginActivity">
             <intent-filter>
@@ -86,8 +141,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"></activity>
-        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".MapActivity" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".Main3Activity" />
+        <activity android:name=".HiActivity"></activity>
     </application>
 
 </manifest>
