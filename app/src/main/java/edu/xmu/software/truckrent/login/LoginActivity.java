@@ -115,6 +115,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_button:
                 username = text_username.getText().toString();
                 password = text_password.getText().toString();
+
+
                 //if后填上validate()，则正常。。
                 if(true) {
                     waitDialog.show();
