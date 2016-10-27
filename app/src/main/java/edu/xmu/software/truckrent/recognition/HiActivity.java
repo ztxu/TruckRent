@@ -1,4 +1,4 @@
-package edu.xmu.software.truckrent;
+package edu.xmu.software.truckrent.recognition;
 
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import edu.xmu.software.truckrent.R;
 
 public class HiActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "HiActivity";
@@ -53,6 +55,10 @@ public class HiActivity extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.btn_stop_service:
                 //停止Service
+                //解绑Service
+                if (binder != null) {
+                    unbindService(myServiceConn);
+                }
                 stopService(intent);
                 break;
 

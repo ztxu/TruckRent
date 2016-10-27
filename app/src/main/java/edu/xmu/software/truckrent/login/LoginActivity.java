@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -16,10 +15,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import edu.xmu.software.truckrent.HiActivity;
+import edu.xmu.software.truckrent.recognition.HiActivity;
 import edu.xmu.software.truckrent.MapActivity;
-import edu.xmu.software.truckrent.MenuActivity;
-import edu.xmu.software.truckrent.MyService;
 import edu.xmu.software.truckrent.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {

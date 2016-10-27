@@ -1,13 +1,13 @@
-package edu.xmu.software.truckrent;
+package edu.xmu.software.truckrent.recognition;
 
 
 import android.app.Service;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.AndroidRuntimeException;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.baidu.speech.EventListener;
 import com.baidu.speech.EventManager;
@@ -65,6 +65,9 @@ public class MyService extends Service {
                     @Override
                     public void onEvent(String name, String params, byte[] data, int offset, int length) {
                         Log.d(TAG, String.format("event: name=%s, params=%s", name, params));
+
+
+
                         try {
                             JSONObject json = new JSONObject(params);
                             if ("wp.data".equals(name)) { // 每次唤醒成功, 将会回调name=wp.data的时间, 被激活的唤醒词在params的word字段
@@ -74,7 +77,7 @@ public class MyService extends Service {
                                     dataCallback.dataChanged(str);
                                 }
                                 if(word.matches("百度一下")){
-                                    Intent intent=new Intent(MyService.this,Main2Activity.class);
+                                    Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("http://baidu.com"));
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
                                 }else if(word.matches("小度你好")){

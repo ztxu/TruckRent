@@ -3,6 +3,7 @@ package edu.xmu.software.truckrent;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -79,6 +80,7 @@ import com.baidu.mapapi.search.sug.SuggestionSearchOption;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.xmu.software.truckrent.recognition.HiActivity;
 import edu.xmu.software.truckrent.util.RouteLineAdapter;
 import edu.xmu.software.truckrent.util.overlayutil.BikingRouteOverlay;
 import edu.xmu.software.truckrent.util.overlayutil.DrivingRouteOverlay;
@@ -224,6 +226,16 @@ public class MapActivity extends Activity implements OnGetPoiSearchResultListene
         this.setLocationOption();
 
         mLocClient.start();
+
+        findViewById(R.id.voice).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapActivity.this,HiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     public void goRoutePlan(View v){

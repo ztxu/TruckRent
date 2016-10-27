@@ -143,15 +143,51 @@
         </activity>
         <activity android:name=".MenuActivity" />
         <activity android:name=".MapActivity" />
+        <activity
+            android:name=".recognition.Main2Activity"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:theme="@android:style/Theme.DeviceDefault.Light"
+            android:screenOrientation="portrait">
 
+        </activity>
         <service
-            android:name=".MyService"
+            android:name=".recognition.MyService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".HiActivity"></activity>
+        <activity android:name=".recognition.ActivityWakeUp" />
+        <activity android:name=".recognition.Main3Activity" />
+        <activity android:name=".recognition.HiActivity" />
+
+        <activity
+            android:name=".recognition.ActivityOffline"
+            android:label="离线语法"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:theme="@android:style/Theme.DeviceDefault.Light"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".recognition.ApiActivity"
+            android:label="普通模式(API方式和UI方式)"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:theme="@android:style/Theme.DeviceDefault.Light"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".recognition.Setting"
+            android:label="设置"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:theme="@android:style/Theme.DeviceDefault.Light"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.baidu.speech.asr.demo.setting" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <uses-library android:name="android.test.runner" />
+
     </application>
 
 </manifest>
