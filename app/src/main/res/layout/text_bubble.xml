@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.baidu.mapapi.clusterutil.ui.RotationLayout
+    <edu.xmu.software.truckrent.util.clusterutil.ui.RotationLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -17,6 +17,6 @@
             android:paddingRight="10dp"
             android:paddingTop="5dp"/>
 
-    </com.baidu.mapapi.clusterutil.ui.RotationLayout>
+    </edu.xmu.software.truckrent.util.clusterutil.ui.RotationLayout>
 
 </LinearLayout>
