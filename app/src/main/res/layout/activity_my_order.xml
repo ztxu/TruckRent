@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:text="送货订单"
+            android:textSize="20dp"
+            android:textColor="@color/colorGlobal"
+            android:id="@+id/btn_deliveryorder"/>
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/order_button_border"
+            android:text="车辆订单"
+            android:textSize="20dp"
+            android:textColor="@color/colorGlobalText"
+            android:id="@+id/btn_carrentalorder"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/order_menu_border">
+        <Button
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:text="全部"
+            android:textSize="15dp"
+            android:id="@+id/btn_alldelivery"/>
+        <Button
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:text="未支付"
+            android:textSize="15dp"
+            android:id="@+id/btn_nopaidorder"/>
+        <Button
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:text="执行中"
+            android:textSize="15dp"
+            android:id="@+id/btn_executingorder"/>
+        <Button
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:text="已完成"
+            android:textSize="15dp"
+            android:id="@+id/btn_executedorder"/>
+    </LinearLayout>
+
+    <ListView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/orderList"
+        android:cacheColorHint="@color/colorChatBg"
+        android:fadingEdge="none"
+        android:listSelector="#00000000"/>
+</LinearLayout>

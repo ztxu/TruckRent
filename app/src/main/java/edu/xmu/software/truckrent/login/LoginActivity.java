@@ -1,11 +1,11 @@
 package edu.xmu.software.truckrent.login;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -16,11 +16,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import edu.xmu.software.truckrent.recognition.ActivityOffline;
-import edu.xmu.software.truckrent.recognition.HiActivity;
 import edu.xmu.software.truckrent.MapActivity;
 import edu.xmu.software.truckrent.R;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends Activity implements View.OnClickListener {
 
     //define compoment
     private EditText text_username; //输入的用户名控件
@@ -61,7 +60,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
        /* try{
             intent = new Intent(this, MyService.class);
             startService(intent);
@@ -70,7 +68,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             new AlertDialog.Builder(this).setTitle("标题").setMessage(e.toString())
                     .setPositiveButton("确定", null).show();
         }*/
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
         /** 用于获取clickString，定位是哪个地方触发了登陆事件
          clickString = getIntent().getExtras().getString("click");

@@ -3,5 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorGlobal">#1a9652</color>
+    <color name="colorTitleBarBg">#faf5fa</color>
+    <color name="colorGlobalText">#080808</color>
+    <color name="colorChatBg">#ebe6eb</color>
+    <color name="colorBorder">#ebe6eb</color>
     <color name="background_floating_material_dark">#ff424242</color>
 </resources>

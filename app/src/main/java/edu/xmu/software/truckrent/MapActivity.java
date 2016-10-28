@@ -80,6 +80,7 @@ import com.baidu.mapapi.search.sug.SuggestionSearchOption;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.xmu.software.truckrent.common.CommonsButtonListerner;
 import edu.xmu.software.truckrent.recognition.HiActivity;
 import edu.xmu.software.truckrent.util.RouteLineAdapter;
 import edu.xmu.software.truckrent.util.overlayutil.BikingRouteOverlay;
@@ -103,6 +104,8 @@ public class MapActivity extends Activity implements OnGetPoiSearchResultListene
     private AutoCompleteTextView keyWorldsView = null;
     private ArrayAdapter<String> sugAdapter = null;
     private int loadIndex = 0;
+    private Button btn_person;
+    private Button btn_chat;
 
     String cityname="北京";
     LatLng center=new LatLng(39.92235, 116.380338);//中心点
@@ -150,7 +153,15 @@ public class MapActivity extends Activity implements OnGetPoiSearchResultListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //自定义标题
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.activity_map);
+        //设置标题为某个layout
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.activity_home_titlebar);
+        btn_person=(Button)findViewById(R.id.btn_person);
+        CommonsButtonListerner.btnPersonListerner(btn_person,MapActivity.this);
+        btn_chat=(Button)findViewById(R.id.btn_chat);
+        CommonsButtonListerner.btnChatListerner(btn_chat,MapActivity.this);
         // 初始化搜索模块，注册搜索事件监听
         mPoiSearch = PoiSearch.newInstance();
         mPoiSearch.setOnGetPoiSearchResultListener(this);

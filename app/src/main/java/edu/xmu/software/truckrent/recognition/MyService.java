@@ -33,7 +33,7 @@ public class MyService extends Service {
     }
 
     public class MyBinder extends Binder {
-        MyService getService() {
+        public MyService getService() {
             return MyService.this;
         }
 

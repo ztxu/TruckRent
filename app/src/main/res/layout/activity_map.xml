@@ -1,166 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="edu.xmu.software.truckrent.MapActivity">
+    android:layout_height="match_parent">
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/map"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:orientation="horizontal" >
-        <AutoCompleteTextView
-            android:id="@+id/searchkey"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.88"
-            android:hint="请输入搜索内容(餐厅)"
-            />
-        <Button
-            android:id="@+id/searchNearby"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="12"
-            android:onClick="searchNearbyProcess"
-            android:padding="10dip"
-            android:text="周边搜索" />
-        <ImageButton
-            android:id="@+id/voice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/voice"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="从" >
-        </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="现在位置"/>
-        <!--<EditText
-            android:id="@+id/startCity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" " />
-            <EditText
-                android:id="@+id/startPlace"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="到" >
-        </TextView>
-        <EditText
-            android:id="@+id/endCity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:hint="终点城市"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" " />
-        <EditText
-            android:id="@+id/endPlace"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:hint="终点地名"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="5dip"
+        android:orientation="vertical">
+
         <Button
-            android:id="@+id/routePlan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="goRoutePlan"
-            android:text="路径规划"/>
+            android:id="@+id/food"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:background="#e0797676"
+            android:onClick="findFood"
+            android:text="饭店"
+            android:textColor="#FFFFFFFF" />
+
+        <Button
+            android:id="@+id/house"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:background="#e0797676"
+            android:onClick="findHouse"
+            android:text="住宿"
+            android:textColor="#FFFFFFFF" />
+
+        <Button
+            android:id="@+id/gasStation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:background="#e0797676"
+            android:onClick="findGasStation"
+            android:text="加油站"
+            android:textColor="#FFFFFFFF" />
+
+        <Button
+            android:id="@+id/serveStation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e0797676"
+            android:onClick="findServeStation"
+            android:text="维修站"
+            android:textColor="#FFFFFFFF" />
     </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.baidu.mapapi.map.MapView
-            android:id="@+id/map"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginBottom="10dip">
+
+        <Button
+            android:id="@+id/pre"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:clickable="true" />
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="2dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/pre_"
+            android:onClick="nodeClick" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="2dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/next_"
+            android:onClick="nodeClick" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:background="@drawable/map_stroke"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/searchNearby"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:background="@drawable/search_icon"
+                android:onClick="searchNearbyProcess"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/searchkey"
+                android:layout_width="268dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:hint="输入周边"
+                android:textColorHint="#d4d1d1"/>
+
+            <ImageButton
+                android:id="@+id/voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#ffffff"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/voice" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_space"
+            android:layout_width="match_parent"
+            android:layout_height="5dip"
+            android:layout_below="@+id/ll_search"
+            android:background="#00fffdfd"
+            android:orientation="horizontal" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="5dip"
-            android:layout_marginBottom="15dp">
-            <Button
-                android:id="@+id/food"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="findFood"
-                android:text="饭店"
-                android:layout_marginBottom="1dp"
-                />
-            <Button
-                android:id="@+id/house"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="住宿"
-                android:onClick="findHouse"
-                android:layout_marginBottom="1dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/gasStation"
-                android:text="加油站"
-                android:onClick="findGasStation"
-                android:layout_marginBottom="1dp"/>
-            <Button
-                android:id="@+id/serveStation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="维修站"
-                android:onClick="findServeStation"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignWithParentIfMissing="false"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="false"
-            android:layout_marginBottom="10dip" >
+            android:layout_height="40dip"
+            android:layout_below="@+id/ll_space"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/map_stroke"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="从"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="现在位置" />
+            <!--<EditText
+                android:id="@+id/startCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" " />
+                <EditText
+                    android:id="@+id/startPlace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="到"></TextView>
+
+            <EditText
+                android:id="@+id/endCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:hint="终点城市"
+                android:text=""
+                android:textColorHint="#d4d1d1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" " />
+
+            <EditText
+                android:id="@+id/endPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:hint="终点地名"
+                android:text=""
+                android:textColorHint="#d4d1d1" />
 
             <Button
-                android:id="@+id/pre"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="2dip"
-                android:layout_marginRight="2dip"
-                android:layout_weight="1.0"
-                android:background="@drawable/pre_"
-                android:onClick="nodeClick" />
-
-            <Button
-                android:id="@+id/next"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="2dip"
-                android:layout_marginRight="2dip"
-                android:layout_weight="1.0"
-                android:background="@drawable/next_"
-                android:onClick="nodeClick" />
+                android:id="@+id/routePlan"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/lg_login_btn"
+                android:onClick="goRoutePlan"
+                android:text="路径规划"
+                android:layout_marginLeft="10dp"/>
         </LinearLayout>
-    </RelativeLayout>
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
