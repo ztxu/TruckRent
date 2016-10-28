@@ -81,6 +81,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.xmu.software.truckrent.common.CommonsButtonListerner;
+import edu.xmu.software.truckrent.recognition.ActivityOffline;
 import edu.xmu.software.truckrent.recognition.HiActivity;
 import edu.xmu.software.truckrent.util.RouteLineAdapter;
 import edu.xmu.software.truckrent.util.overlayutil.BikingRouteOverlay;
@@ -241,7 +242,7 @@ public class MapActivity extends Activity implements OnGetPoiSearchResultListene
         findViewById(R.id.voice).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MapActivity.this,HiActivity.class);
+                Intent intent = new Intent(MapActivity.this,ActivityOffline.class);
                 startActivity(intent);
             }
         });

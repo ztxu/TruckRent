@@ -1,6 +1,7 @@
 package edu.xmu.software.truckrent.recognition;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 
 import edu.xmu.software.truckrent.R;
 
-public class HiActivity extends AppCompatActivity implements View.OnClickListener {
+public class HiActivity extends Activity implements View.OnClickListener {
     private static final String TAG = "HiActivity";
 
     private Intent intent = null;

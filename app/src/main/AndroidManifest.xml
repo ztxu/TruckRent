@@ -78,7 +78,7 @@
         <service
             android:name="com.baidu.speech.VoiceRecognitionService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity
             android:name="com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog"
